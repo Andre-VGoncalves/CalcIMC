@@ -7,12 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "Atleta.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,4 +29,10 @@
 }
 
 
+- (IBAction)btnCalc:(id)sender {
+    Atleta *atleta = [[Atleta alloc]init];
+    atleta.peso = self.txtPeso.text.floatValue;
+    atleta.altura = self.txtAltura.text.floatValue;
+    self.txtImc.text =[NSString stringWithFormat:@"%0.2f",[atleta calcImc]];
+}
 @end
